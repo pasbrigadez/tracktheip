@@ -59,7 +59,7 @@ class Form(QDialog):
 		self.setWindowTitle('IP Tracker')
 	def diklik(self):
 		r = requests.get('https://ipapi.co/%s/json'%str(self.aypi.text()))
-		owtput = "Negara : %s"%(r.json()['country'])+"\nKota : %s"%(r.json()['city']+"\nWilayah : %s"%(r.json()['region'])+"\nLokasi : https://maps.googleapis.com/maps/api/staticmap?center=%s,%s&size=464x250&zoom=15"%(r.json()['latitude'],r.json()['longitude']))
+		owtput = "Negara : %s"%(r.json()['country_name'])+"\nKota : %s"%(r.json()['city']+"\nWilayah : %s"%(r.json()['region'])+"\nLokasi : https://maps.googleapis.com/maps/api/staticmap?center=%s,%s&size=464x250&zoom=15"%(r.json()['latitude'],r.json()['longitude']))
 		self.output.setText(owtput)
 
 def main():
